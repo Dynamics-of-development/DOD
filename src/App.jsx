@@ -1,25 +1,66 @@
-import logo from './logo.svg';
-import './App.css';
-
+import Index from "pages/Index";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import 'assets/styles.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import PublicLayout from "layouts/PublicLayout";
+import PrivateLayout from "layouts/PrivateLayout";
+import Productos from "pages/admin/Productos";
+import Ventas from "pages/admin/Ventas";
+import Usuarios from "pages/admin/Usuarios";
+import { Auth0Provider } from "@auth0/auth0-react";
+import { UserContext } from "context/userContext";
+import { useState } from "react";
+import PrivateRoute from "components/PrivateRoute";
 function App() {
+  const [userData, setUserData] = useState({});
+  console.log(userData)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Auth0Provider
+      domain="dynamics-of-development.us.auth0.com"
+      clientId="x3v9kwN7gfxvTKdDtKB2901L14Y9SVWe"
+      redirectUri="http://localhost:3000/admin/productos"
+      audience='api-dod-auth'
+    >
+      <div className="App">
+        <UserContext.Provider value={{ userData, setUserData }}>
+          <Router>
+            <Switch>
+              <Route path={['/admin/productos', '/admin/ventas', '/admin/usuarios']}>
+                <PrivateLayout>
+                  <Switch>
+                    <Route path='/admin/usuarios'>
+                      <PrivateRoute roleList={['Admin']}>
+                        <Usuarios />
+                      </PrivateRoute>
+                    </Route>
+                    <Route path='/admin/ventas'>
+                      <PrivateRoute roleList={['Admin', 'Vendedor']}>
+                        <Ventas />
+                      </PrivateRoute>
+                    </Route>
+                    <Route path='/admin/productos'>
+                      <PrivateRoute roleList={['Admin', 'Vendedor']}>
+                        <Productos />
+                      </PrivateRoute>
+                    </Route>
+                  </Switch>
+                </PrivateLayout>
+              </Route>
+              <Route path={['/']}>
+                <PublicLayout>
+                  <Switch>
+                    <Route path='/'>
+                      <Index />
+                    </Route>
+                  </Switch>
+                </PublicLayout>
+              </Route>
+            </Switch>
+          </Router>
+        </UserContext.Provider>
+      </div>
+    </Auth0Provider>
   );
 }
-
 export default App;
