@@ -7,8 +7,8 @@ import "assets/navbar.css";
 const Navbar = () => {
   const { loginWithRedirect } = useAuth0();
   return (
-    <nav className="hidden lg:flex">
-      <div className="hidden lg:flex navbar items-center justify-between w-5/6 m-auto py-5 px-0">
+    <nav className="bg-purple-700 hidden lg:flex">
+      <div className="hidden lg:flex navbar items-center justify-between w-5/6 m-auto px-0">
         <img src={logo} className="w-12 " />
         <NavLink
           exact
@@ -21,7 +21,7 @@ const Navbar = () => {
         </NavLink>
         <button
           onClick={() => loginWithRedirect()}
-          className="bg-white p-2 text-white shadow-md hover:bg-gray-200 rounded-lg"
+          className="border p-2 text-white shadow-md hover:bg-purple-600 rounded-lg"
         >
           Iniciar sesion
         </button>
