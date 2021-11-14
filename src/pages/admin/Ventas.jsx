@@ -32,7 +32,7 @@ const Ventas = () => {
     }
 
     const deleteFn = async (_id) => {
-        let opcion = window.confirm("Estas seguro que quiere eliminar la venta");
+        let opcion = window.confirm("¿Estás seguro de eliminar esta venta?");
         if (opcion == true) {
             await eliminarVenta(_id, (resp) => {
                 console.log(resp.data);

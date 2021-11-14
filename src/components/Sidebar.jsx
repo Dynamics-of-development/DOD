@@ -8,7 +8,7 @@ import PrivateComponent from './PrivateComponent';
 const Sidebar = () => {
     const { logout, user } = useAuth0();
     return (
-        <nav className='hidden lg:flex lg:w-72 border border-gray-300 h-full flex-col bg-gray-900 p-4 '>
+        <nav className='hidden lg:flex lg:w-72 h-full flex-col color-p p-4 '>
             <Link className="no-underline" to='/admin'>
                 <CarritoLogo />
             </Link>

@@ -11,6 +11,7 @@ import { Auth0Provider } from "@auth0/auth0-react";
 import { UserContext } from "context/userContext";
 import { useState } from "react";
 import PrivateRoute from "components/PrivateRoute";
+import Footer from "components/Foooter";
 function App() {
   const [userData, setUserData] = useState({});
   console.log(userData)
@@ -58,6 +59,7 @@ function App() {
               </Route>
             </Switch>
           </Router>
+          <Footer />
         </UserContext.Provider>
       </div>
     </Auth0Provider>

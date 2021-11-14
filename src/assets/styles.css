@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+*{
+  font-family: 'Krub', sans-serif;
+}
 .animacion {
   width: 30%;
   height: 83%;
@@ -54,4 +57,21 @@
 .tabla tr:hover{
   background-color: rgb(174, 174, 179);
   cursor: pointer;
+}
+.img-center{
+  width: 70%!important;
+  height: 70%!important;
+}
+.footer {
+  width: 100%;
+  padding: 1.5%;
+  background: #2A0944;
+  text-align: center;
+  color: #fff;
+}
+.color-p{
+  background: #2A0944;
+}
+.color-title{
+  color: #BEAEE2;
 }
