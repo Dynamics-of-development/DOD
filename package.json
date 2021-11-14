@@ -5,7 +5,6 @@
   "homepage": "https://frontend-dod.herokuapp.com/",
   "dependencies": {
     "@auth0/auth0-react": "^1.8.0",
-    "tailwindcss": "^2.2.19",
     "@craco/craco": "^6.4.0",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
@@ -21,6 +20,7 @@
     "react-scripts": "4.0.3",
     "react-toastify": "^8.1.0",
     "reactstrap": "^8.10.0",
+    "tailwindcss": "^2.2.19",
     "web-vitals": "^1.0.1"
   },
   "scripts": {
@@ -50,8 +50,5 @@
   "engines": {
     "node": "16.13.0"
   },
-  "devDependencies": {
-    "autoprefixer": "9",
-    "postcss": "8"
-  }
+  "devDependencies": {}
 }
