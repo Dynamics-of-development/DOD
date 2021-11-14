@@ -186,7 +186,16 @@
 .mt-4 {
   margin-top: 1rem/* 16px */;
 }
-
+.w-5\/6 {
+  width: 83.333333%;
+}
+.m-auto {
+  margin: auto;
+}
+.px-0 {
+  padding-left: 0px;
+  padding-right: 0px;
+}
 .animacion {
   width: 30%;
   height: 83%;
