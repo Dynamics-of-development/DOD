@@ -1,6 +1,5 @@
 import axios from "axios";
 
-// const baseURL = "https://nameless-eyrie-17054.herokuapp.com"
 const baseURL = "http://localhost:5000"
 
 const executeRequest = async (options, resCallback, errCallback) => {
