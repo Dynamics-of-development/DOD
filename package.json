@@ -2,7 +2,6 @@
   "name": "ciclo3",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://frontend-dod.herokuapp.com/",
   "dependencies": {
     "@auth0/auth0-react": "^1.8.0",
     "@craco/craco": "^6.4.0",
