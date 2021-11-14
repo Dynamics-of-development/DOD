@@ -25,7 +25,7 @@ export default function AddModalProducto(props) {
         },
         (response)=>{
             console.log(response.data);
-            console.log("producto creado")
+            console.log("Producto creado")
         },
         (error) =>{
             console.error(error);
@@ -47,7 +47,7 @@ export default function AddModalProducto(props) {
                             <input className="form-control"
                                 type="text"
                                 name="producto"
-                                placeholder="Camisa"
+                                placeholder="Collar"
                                 required
                             />
                         </Col>
@@ -58,7 +58,7 @@ export default function AddModalProducto(props) {
                         <Col sm={12}>
                             <input className="form-control" type="text"
                                 required
-                                placeholder="cualquier cosa...."
+                                placeholder="Cualquier cosa...."
                                 name="descripcion"
                             />
                         </Col>

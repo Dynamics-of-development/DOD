@@ -78,11 +78,8 @@ const Ventas = () => {
     }, [ejecutarConsulta]);
 
     useEffect(() => {
-        // console.log('busqueda', busqueda);
-        // console.log("lista original", data);
         setVentasFiltrados(
             data.filter((elemento) => {
-                // console.log('elemento', elemento);
                 return JSON.stringify(elemento).toLowerCase().includes(busqueda.toLowerCase())
             })
         );
@@ -113,12 +110,12 @@ const Ventas = () => {
                     <thead>
                         <tr>
                             <th>IDVenta</th>
-                            <th>ValorTotal</th>
+                            <th>Valor Total</th>
                             <th>ID</th>
                             <th>Cantidad</th>
-                            <th>PrecioUnitario</th>
-                            <th>FechaVenta</th>
-                            <th>CC-Cliente</th>
+                            <th>Precio Unitario</th>
+                            <th>Fecha Venta</th>
+                            <th>C.c Cliente</th>
                             <th>Cliente</th>
                             <th>Vendedor</th>
                             <th>Estado</th>
