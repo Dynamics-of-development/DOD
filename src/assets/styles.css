@@ -90,6 +90,9 @@
 .w-10 {
   width: 2.5rem/* 40px */;
 }
+.w-12 {
+  width: 3rem/* 48px */;
+}
 @media (min-width: 1024px) {
   .lg\:hidden {
       display: none;
