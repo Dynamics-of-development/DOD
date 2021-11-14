@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const baseURL = "http://localhost:5000"
+const baseURL = "https://backend-dod.herokuapp.com/"
 
 const executeRequest = async (options, resCallback, errCallback) => {
     await axios.request(options).then(resCallback).catch(errCallback);

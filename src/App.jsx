@@ -20,7 +20,7 @@ function App() {
     <Auth0Provider
       domain="dynamics-of-development.us.auth0.com"
       clientId="x3v9kwN7gfxvTKdDtKB2901L14Y9SVWe"
-      redirectUri="http://localhost:3000/admin/productos"
+      redirectUri="https://frontend-dod.herokuapp.com/admin/productos"
       audience='api-dod-auth'
     >
       <div className="App">
