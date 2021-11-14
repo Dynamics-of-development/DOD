@@ -1,15 +1,15 @@
-import React, { useState, useEffect } from 'react'
-import { Table, Button, Container } from 'reactstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import EditModalUsuario from 'components/EditModalUsuario';
-import { nanoid } from 'nanoid'
-import { obtenerUsuarios } from 'utils/usuarios/api';
+import React, { useState, useEffect } from "react";
+import { Table, Button, Container } from "reactstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
+import EditModalUsuario from "components/EditModalUsuario";
+import { nanoid } from "nanoid";
+import { obtenerUsuarios } from "utils/usuarios/api";
 
 const Usuarios = () => {
   const [data, setData] = useState([]);
   const [item, setItem] = useState(data);
   const [ejecutarConsulta, setEjecutarConsulta] = useState(true);
-  const [busqueda, setBusqueda] = useState('');
+  const [busqueda, setBusqueda] = useState("");
   const [usuariosFiltrados, setUsuariosFiltrados] = useState(data);
 
   //Modal
@@ -19,25 +19,23 @@ const Usuarios = () => {
   const editFn = (item) => {
     setShowEditModal(true);
     setItem(item);
-  }
+  };
   const loadAxios = async () => {
-    await obtenerUsuarios(resp => {
-      const nuewData = []
-      const dataAxios = resp.data
+    await obtenerUsuarios((resp) => {
+      const nuewData = [];
+      const dataAxios = resp.data;
 
-      dataAxios.map(item => {
-        nuewData.push(
-          {
-            _id: item._id,
-            usuario: item.email,
-            rol: item.rol,
-            estado: item.estado
-          },
-        )
-      })
-      setData(nuewData)
+      dataAxios.map((item) => {
+        nuewData.push({
+          _id: item._id,
+          usuario: item.email,
+          rol: item.rol,
+          estado: item.estado,
+        });
+      });
+      setData(nuewData);
     });
-  }
+  };
   useEffect(() => {
     if (ejecutarConsulta) {
       loadAxios();
@@ -47,7 +45,9 @@ const Usuarios = () => {
   useEffect(() => {
     setUsuariosFiltrados(
       data.filter((elemento) => {
-        return JSON.stringify(elemento).toLowerCase().includes(busqueda.toLowerCase())
+        return JSON.stringify(elemento)
+          .toLowerCase()
+          .includes(busqueda.toLowerCase());
       })
     );
   }, [busqueda, data]);
@@ -59,16 +59,19 @@ const Usuarios = () => {
         <div className="flex justify-between">
           <div className="w-2/4">
             <div className="border-2 rounded-xl mt-4">
-              <span className="w-1/12"><i className="fa fa-search"></i></span>
-              <input type="search"
+              <span className="w-1/12">
+                <i className="fa fa-search"></i>
+              </span>
+              <input
+                type="search"
                 value={busqueda}
                 onChange={(e) => setBusqueda(e.target.value)}
                 className="w-11/12 py-1"
-                placeholder="Buscar..." />
+                placeholder="Buscar..."
+              />
             </div>
           </div>
-          <button>
-          </button>
+          <button></button>
         </div>
         <br />
         <br />
@@ -89,16 +92,24 @@ const Usuarios = () => {
                 <td>{item.rol}</td>
                 <td>{item.estado}</td>
                 <td>
-                  <Button color="primary" onClick={() => editFn(item)}>m<i className="fas fa-pen"></i></Button>
+                  <Button color="primary" onClick={() => editFn(item)}>
+                    <i className="fas fa-pen"></i>
+                  </Button>
                 </td>
               </tr>
             ))}
           </tbody>
         </Table>
       </Container>
-      <EditModalUsuario showEditModal={showEditModal} setShowEditModal={setShowEditModal} setData={setData} data={data} item={item} />
+      <EditModalUsuario
+        showEditModal={showEditModal}
+        setShowEditModal={setShowEditModal}
+        setData={setData}
+        data={data}
+        item={item}
+      />
     </>
-  )
-}
+  );
+};
 
-export default Usuarios
+export default Usuarios;
