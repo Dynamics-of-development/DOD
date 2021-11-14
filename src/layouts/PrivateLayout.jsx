@@ -43,7 +43,7 @@ const PrivateLayout = ({ children }) => {
     if (isLoading || loadingUserInformation) return <div>Loading ...</div>;
     return (
             <div className="flex w-screen h-screen">
-                <div className='flex flex-col md:flex-row flex-nowrap h-full w-full'>
+                <div className='flex flex-row md:flex-row flex-nowrap h-full w-full'>
                     <Sidebar />
                     <SideBarResponsive />
                     <main className="flex w-full overflow-y-scroll">

@@ -8,11 +8,11 @@ import PrivateComponent from './PrivateComponent';
 const Sidebar = () => {
     const { logout, user } = useAuth0();
     return (
-        <nav className='hidden lg:flex lg:w-72 h-full flex-row bg-purple-900 p-4 '>
+        <nav className='hidden lg:flex lg:w-72 h-full flex-column bg-purple-900 p-4 '>
             <Link className="no-underline" to='/admin'>
                 <CarritoLogo />
             </Link>
-            <div className='my-4 '>
+            <div className='my-4'>
                 <Ruta icono='fas fa-user' ruta='/admin/productos' nombre='Perfil' usuario={user} />
                 <PrivateComponent roleList={['Admin', 'Vendedor']}>
                 <Ruta icono='fas fa-tshirt' ruta='/admin/productos' nombre='Productos' />
