@@ -30,7 +30,7 @@
   height: 100%;
 }
 .flex-col {
-  flex-direction: column;
+  flex-direction: row;
 }
 .bg-purple-900 {
   --tw-bg-opacity: 1;
