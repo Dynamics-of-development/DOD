@@ -1,3 +1,4 @@
+import Foooter from 'components/Foooter';
 import Navbar from 'components/Navbar';
 import NavbarResponsive from 'components/NavbarResponsive';
 
@@ -7,6 +8,7 @@ const PublicLayout = ({children}) => {
             <Navbar />
             <NavbarResponsive />
             {children}
+            <Foooter />
         </header>
     )
 };
