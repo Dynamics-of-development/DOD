@@ -5,6 +5,32 @@
 *{
   font-family: 'Krub', sans-serif;
 }
+.hidden {
+  display: none;
+}
+@media (min-width: 1024px) {
+  .lg\:flex {
+      display: flex;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:w-72 {
+      width: 18rem/* 288px */;
+  }
+}
+.h-full {
+  height: 100%;
+}
+.flex-col {
+  flex-direction: column;
+}
+.bg-purple-900 {
+  --tw-bg-opacity: 1;
+  background-color: rgba(76, 29, 149, var(--tw-bg-opacity));
+}
+.p-4 {
+  padding: 1rem /* 16px */;
+}
 .animacion {
   width: 30%;
   height: 83%;
