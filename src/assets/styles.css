@@ -157,6 +157,24 @@
 .no-underline {
   text-decoration: none;
 }
+.w-2\/4 {
+  width: 50%;
+}
+.justify-between {
+  justify-content: space-between;
+}
+.w-1\/12 {
+  width: 8.333333%;
+}
+.border-2 {
+  border-width: 2px;
+}
+.rounded-xl {
+  border-radius: 0.75rem/* 12px */;
+}
+.mt-4 {
+  margin-top: 1rem/* 16px */;
+}
 
 .animacion {
   width: 30%;
